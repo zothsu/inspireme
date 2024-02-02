@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspire Me</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+       <li><a href="{% url 'home' %}">Home</a></li>
+       <li><a href="">About</a></li>
+       {% if user.is_authenticated %}
+       <li><a href="">Feed</a></li>
+       <li><a href="">New Post</a></li>
+       <li><a href="">My Profile</a></li>
+       <li>
+        <a href="{% url '' %}">
+          <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="submit-link">Log Out</button>
+          </form>
+        </a>
+       </li>
+        {% else %}
+       <li><a href="{% url 'login' %}">Log In</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer>
+    <p>Copyright &copy; 2024 | All Right Reserved</p>
+  </footer>
+</body>
+</html>
