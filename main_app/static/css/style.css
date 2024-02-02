@@ -6,22 +6,34 @@
 
 .navbar {
   background-color: #fff;
-  border-radius: 1em;
+  border-radius: 2em;
 }
 
 nav {
   display:flex;
   justify-content: center;
-  padding: .5em;
+}
+
+nav a {
+  font-size: 1rem;
+  padding: 2em;
+  color: black;
 }
 
 body {
   background-color: #C8BFB8;
   min-height: 100vh;
+  padding: 2em;
 }
 
 nav ul {
   list-style-type: none;
   display: flex;
   align-items: center;
+}
+
+footer {
+position: fixed;
+bottom: 0; left: 0; right: 0;
+text-align: center;
 }
