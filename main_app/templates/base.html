@@ -5,34 +5,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&display=swap" rel="stylesheet">
   <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css”>
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <title>Inspire Me</title>
 </head>
 <body>
+
   <header>
-    <nav>
+    <h1>INSPIRE ME HOME DECOR</h1>
+    <nav class="navbar">
       <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'about' %}">ABOUT</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{% url 'index' %}">Feed</a></li>
-        <li><a href="">New Post</a></li>
-        <li><a href="">My Profile</a></li>
-        <li>
+        <li><a href="{% url 'index' %}">FEED</a></li>
+        <li><a href="">NEW POST</a></li>
+        <li><a href="">MY PROFILE</a></li>
+      </ul>
+      <div class="register">
         <a href="{% url 'logout' %}">
           <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
-            <button type="submit" class="submit-link">Log Out</button>
+            <button type="submit" class="submit-link">LOG OUT</button>
           </form>
         </a>
-        </li>
         {% else %}
-          <li><a href="{% url 'signup' %}">Sign Up/a></li>
-          <li><a href="{% url 'login' %}">Log In</a></li>
+          <a href="{% url 'signup' %}">SIGN UP</a>
+          <a href="{% url 'login' %}">LOG IN</a>
         {% endif %}
-      </ul>
+      </div>
     </nav>
   </header>
   <main>
