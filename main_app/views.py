@@ -7,6 +7,12 @@ from django.contrib.auth.decorators import login_required
 def home(request):
   return render(request, 'home.html')
 
+def about(request):
+  return render(request, 'about.html')
+
+def feed_index(request):
+  return render(request, 'feed/index.html')
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':

@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  font-family: 'IM Fell Double Pica SC', serif;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #fff;
+  border-radius: 1em;
+}
+
+nav {
+  display:flex;
+  justify-content: center;
+  padding: .5em;
+}
+
+body {
+  background-color: #C8BFB8;
+  min-height: 100vh;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
