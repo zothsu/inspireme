@@ -7,13 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&display=swap" rel="stylesheet">
-  <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css”>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <title>Inspire Me</title>
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}"> 
 
   <header>
     <h1>&nbsp; &nbsp;INSPIRE ME HOME DECOR</h1>
@@ -23,7 +22,7 @@
         <li><a href="{% url 'about' %}">ABOUT</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'index' %}">FEED</a></li>
-        <li><a href="{% url 'new_post' %}">NEW POST</a></li>
+        <li><a href="">NEW POST</a></li>
         <li><a href="">MY PROFILE</a></li>
       </ul>
       <div class="register">
