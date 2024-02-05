@@ -6,19 +6,22 @@
 
 {% for post in posts %}
 
-<a href="{% url 'detail' post.id %}">
 <div class="card">
   <div class="card-content">
     <span class="card-title">
       <p> Name: {{ post.name }}</p>
-      <p> Details: {{ post.details }}</p>
+      <p> Details: {{ post.comment }}</p>
       <p> Brand: {{ post.brand }}</p>
       <p> URL: {{ post.url }}</p>
       <p> Image URL: {{ post.image }}</p>
     </span>
   </div>
+  <a href="{% url 'detail' post.id %}">Add Comment</a>
+  <div>
+    <a href="{% url 'post_update' post.id %}">Update</a>
+    <a href="{% url 'post_delete' post.id %}">Delete</a>
+  </div>
 </div>
-</a>
 
 {% endfor %}
 {% endblock %}
