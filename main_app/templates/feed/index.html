@@ -5,10 +5,20 @@
 <h1>Feed</h1>
 
 {% for post in posts %}
+
+<a href="{% url 'detail' post.id %}">
 <div class="card">
   <div class="card-content">
-    
+    <span class="card-title">
+      <p> Name: {{ post.name }}</p>
+      <p> Details: {{ post.details }}</p>
+      <p> Brand: {{ post.brand }}</p>
+      <p> URL: {{ post.url }}</p>
+      <p> Image URL: {{ post.image }}</p>
+    </span>
   </div>
 </div>
+</a>
 
+{% endfor %}
 {% endblock %}
