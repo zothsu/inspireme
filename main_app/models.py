@@ -14,3 +14,5 @@ class Post(models.Model):
   url = models.URLField()
   image = models.CharField()
 
+  
+
