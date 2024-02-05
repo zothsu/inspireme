@@ -1,8 +1,15 @@
 * {
   box-sizing: border-box;
-  font-family: 'IM Fell Double Pica SC', serif;
+  font-family: 'IM Fell Double Pica', serif;
   text-decoration: none;
 }
+
+body {
+  min-height: 100vh;
+  background-color: #C8BFB8;
+}
+
+/* NAVBAR */
 
 .navbar {
   background-color: #fff;
@@ -16,14 +23,9 @@ nav {
 
 nav a {
   font-size: 1rem;
-  padding: 2em;
+  padding: 1em;
   color: black;
-}
-
-body {
-  background-color: #C8BFB8;
-  min-height: 100vh;
-  padding: 2em;
+  font-family: 'IM Fell Double Pica', serif;
 }
 
 nav ul {
@@ -31,6 +33,62 @@ nav ul {
   display: flex;
   align-items: center;
 }
+
+/* HOME PAGE */
+
+.home {
+  background: url('https://i.imgur.com/Vgk3AAX.png');
+  background-size: cover;
+  background-color: #C8BFB8;
+  padding: 4em;
+}
+
+.welcome {
+  font-size: 2rem;
+  margin-left: 9rem;
+  margin-top: 8.5rem;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin: 6em 30em 0 2em;
+  padding: 4px;
+  text-align: right;
+}
+
+.img1 {
+  margin: 50px;
+  padding: 30px 50px 100px 50px;
+}
+
+/* ABOUT PAGE */
+
+.about {
+  background: url('https://i.imgur.com/ZuOTAxs.png');
+  background-size: cover;
+  background-color: #C8BFB8;
+}
+
+.about-title {
+  text-align: center;
+  margin: 5em 12.5em 0 0;
+  font-size: 1.8rem;
+  font-weight: lighter;
+}
+
+.about-p {
+  text-align: center;
+  margin: 1.8em 16em 0 0;
+  font-size: 1.3rem;
+}
+
+.about-bottom {
+  text-align: center;
+  margin: 6em 20.5em 0 0;
+  font-size: 1rem;
+}
+
+/* FOOTER */
 
 footer {
 position: fixed;
