@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
-{% block body_class %}home{% endblock %}
+{% block body_class %}feed{% endblock %}
 {% block content %}
 
 <h1>Feed</h1>
 
-
+{% for post in posts %}
+<div class="card">
+  <div class="card-content">
+    
+  </div>
+</div>
 
 {% endblock %}

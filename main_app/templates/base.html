@@ -22,7 +22,7 @@
         <li><a href="{% url 'about' %}">ABOUT</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'index' %}">FEED</a></li>
-        <li><a href="">NEW POST</a></li>
+        <li><a href="{% url 'post_create' %}">NEW POST</a></li>
         <li><a href="">MY PROFILE</a></li>
       </ul>
       <div class="register">
