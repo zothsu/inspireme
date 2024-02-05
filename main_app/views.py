@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Post
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic import ListView
 # import requests
 
@@ -43,6 +43,14 @@ def posts_detail(request, post_id):
 class PostCreate(CreateView):
   model = Post
   fields = '__all__'
+  
+class PostDelete(DeleteView):
+  model = Post
+  success_url = '/feed'
+  
+class PostUpdate(UpdateView):
+  model = Post
+  fields = ['comment', 'brand', 'price', 'url', 'image']
   
   
   def get_queryset(self):
