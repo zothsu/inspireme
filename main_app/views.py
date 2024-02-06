@@ -59,3 +59,6 @@ class PostUpdate(UpdateView):
       return Post.objects.order_by(sort)
     else:
       return Post.objects.all()
+    
+# class CommentCreate(CreateView):
+#   pass
