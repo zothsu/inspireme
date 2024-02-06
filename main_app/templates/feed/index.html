@@ -16,8 +16,8 @@
       <p> Image URL: {{ post.image }}</p>
     </span>
   </div>
-  <a href="{% url 'post_detail' post.id %}">View Details</a>
-  <a href="{% url 'comment' post.id %}">Add Comment</a>
+  <a href="{% url 'post_detail' post.id %}">View All Dupes!</a>
+  <a href="{% url 'comment' post.id %}">Add a Dupe!</a>
   <div>
     <a href="{% url 'post_update' post.id %}">Update</a>
     <a href="{% url 'post_delete' post.id %}">Delete</a>

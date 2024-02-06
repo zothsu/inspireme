@@ -2,10 +2,13 @@
 {% block body_class %}feed{% endblock %}
 {% block content %}
 
-<h1>See All Dupes</h1>
+<h1>All Dupes!</h1>
 
 
-{% for comment in comments %}
+
+<a href="{% url 'comment' post.id %}">Add a Dupe!</a>
+
+{% for comment in post.entry.all %}
 <div class="card">
   <div class="card-content">
     <span class="card-title">
@@ -16,7 +19,6 @@
       <p> Image URL: {{ comment.image }}</p>
     </span>
   </div>
-  <a href="{% url 'comment' post.id %}">Add Comment</a>
 </div>
 {% endfor %}
 
