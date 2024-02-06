@@ -36,7 +36,7 @@ def signup(request):
 
 def posts_detail(request, post_id):
   post = Post.objects.get(id=post_id)
-  return render(request, 'feed/index.html', { 
+  return render(request, 'main_app/post_details.html', { 
     'post': post
    })
 

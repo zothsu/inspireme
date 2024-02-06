@@ -16,7 +16,7 @@
       <p> Image URL: {{ post.image }}</p>
     </span>
   </div>
-  <a href="{% url 'post_details' post.id %}">View Comments</a>
+  <a href="{% url 'post_detail' post.id %}">View Details</a>
   <a href="{% url 'comment' post.id %}">Add Comment</a>
   <div>
     <a href="{% url 'post_update' post.id %}">Update</a>
