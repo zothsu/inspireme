@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from .models import Post
+from .models import Post, Comment
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic import ListView
 # import requests
@@ -59,3 +59,7 @@ class PostUpdate(UpdateView):
       return Post.objects.order_by(sort)
     else:
       return Post.objects.all()
+    
+class CommentCreate(CreateView):
+  model = Comment
+  fields = '__all__'

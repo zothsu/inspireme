@@ -2,18 +2,18 @@
 {% block body_class %}feed{% endblock %}
 {% block content %}
 
-<h1>Feed</h1>
+<h1>{{ object.name }}'s Post</h1>
 
 {% for post in posts %}
 
 <div class="card">
   <div class="card-content">
     <span class="card-title">
-      <p> Name: {{ post.name }}</p>
-      <p> Details: {{ post.comment }}</p>
-      <p> Brand: {{ post.brand }}</p>
-      <p> URL: {{ post.url }}</p>
-      <p> Image URL: {{ post.image }}</p>
+      <p> Name: {{ comment.name }}</p>
+      <p> Details: {{ comment.comment }}</p>
+      <p> Brand: {{ comment.brand }}</p>
+      <p> URL: {{ comment.url }}</p>
+      <p> Image URL: {{ comment.image }}</p>
     </span>
   </div>
   <a href="{% url 'post_details' post.id %}">View Comments</a>
