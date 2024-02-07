@@ -12,16 +12,21 @@ from django.views.generic import ListView
 
 # Create your views here.
 def home(request):
-  return render(request, 'home.html')
+  return render(request, 'home.html', {
+    'bg': 'home'
+  })
 
 def about(request):
-  return render(request, 'about.html')
+  return render(request, 'about.html', {
+    'bg': 'about'
+  })
 
 @login_required
 def feed_index(request):
   posts = Post.objects.all()
   return render(request, 'feed/index.html', {
-    'posts': posts
+    'posts': posts,
+    'bg': 'feed'
   })
 
 def signup(request):
@@ -43,12 +48,13 @@ def signup(request):
 def posts_detail(request, post_id):
   post = Post.objects.get(id=post_id)
   return render(request, 'main_app/post_details.html', { 
-    'post': post
+    'post': post,
+    'bg': 'feed'
   })
 
 class PostCreate(LoginRequiredMixin, CreateView):
   model = Post
-  fields = '__all__'
+  fields = ['product_name', 'comment', 'brand', 'price', 'url', 'image']
   success_url = '/feed'
   
 class PostDelete(LoginRequiredMixin, DeleteView):
@@ -68,10 +74,23 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
    
 class CommentCreate(LoginRequiredMixin, CreateView):
   model = Comment
-  fields = '__all__'
+  fields = ['product_name', 'body', 'brand', 'price', 'url', 'image']
+  success_url = '/feed'
 
   def form_valid(self, form):
     post_id = self.kwargs['post_id']
     form.instance.post_id = post_id
+    form.instance.user = self.request.user
     super().form_valid(form)
     return redirect('post_detail', post_id=post_id)
+  
+  def get_context_data(self, **kwargs):
+    # Call the base implementation first to get the context dict
+    context = super().get_context_data(**kwargs)
+    # Pass the 'sort' query param (or empty string if not existing) sent in the request
+    context['bg'] = 'feed'
+    return context
+  
+class CommentDelete(LoginRequiredMixin, DeleteView):
+  model = Comment
+  success_url = '/posts'
