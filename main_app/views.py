@@ -92,5 +92,5 @@ class CommentCreate(LoginRequiredMixin, CreateView):
     return context
   
 class CommentDelete(LoginRequiredMixin, DeleteView):
-  model = Post
+  model = Comment
   success_url = '/posts'

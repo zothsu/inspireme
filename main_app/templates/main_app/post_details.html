@@ -3,8 +3,6 @@
 
 <h1>All Dupes!</h1>
 
-
-
 <a href="{% url 'comment' post.id %}">Add a Dupe!</a>
 
 {% for comment in post.entry.all %}
@@ -18,13 +16,13 @@
       <p> Image URL: {{ comment.image }}</p>
     </span>
   </div>
-  {% if user == post.user %}
-  <a href="{% url 'comment_delete' post.id %}">Delete</a>
-  {% endif %}
+  <div>
+    {% if user == comment.user %}
+    <a href="{% url 'comment_delete' comment.id %}">Update</a>
+    <a href="{% url 'comment_delete' comment.id %}">Delete</a>
+    {% endif %}
+  </div>
 </div>
 
 {% endfor %}
-
-
-
 {% endblock %}
