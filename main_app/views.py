@@ -8,6 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Post, Comment
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic import ListView
+from django.urls import reverse
 # import requests
 
 # Create your views here.
@@ -85,12 +86,12 @@ class CommentCreate(LoginRequiredMixin, CreateView):
     return redirect('post_detail', post_id=post_id)
   
   def get_context_data(self, **kwargs):
-    # Call the base implementation first to get the context dict
     context = super().get_context_data(**kwargs)
-    # Pass the 'sort' query param (or empty string if not existing) sent in the request
     context['bg'] = 'feed'
     return context
   
 class CommentDelete(LoginRequiredMixin, DeleteView):
   model = Comment
-  success_url = '/posts'
+
+  def get_success_url(self):
+    return reverse('post_detail', kwargs={'post_id': self.object.post_id})

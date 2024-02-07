@@ -18,7 +18,6 @@
   </div>
   <div>
     {% if user == comment.user %}
-    <a href="{% url 'comment_delete' comment.id %}">Update</a>
     <a href="{% url 'comment_delete' comment.id %}">Delete</a>
     {% endif %}
   </div>
