@@ -19,10 +19,12 @@
   <a href="{% url 'post_detail' post.id %}">View All Dupes!</a>
   <a href="{% url 'comment' post.id %}">Add a Dupe!</a>
   <div>
+    {% if user == post.user %}
     <a href="{% url 'post_update' post.id %}">Update</a>
     <a href="{% url 'post_delete' post.id %}">Delete</a>
+    {% endif %}
   </div>
-</div>
+  </div>
 
 {% endfor %}
 {% endblock %}

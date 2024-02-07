@@ -1,8 +1,9 @@
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
-from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse_lazy
+from django.shortcuts import render, redirect
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from .models import Post, Comment
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -16,6 +17,7 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def feed_index(request):
   posts = Post.objects.all()
   return render(request, 'feed/index.html', {
@@ -37,24 +39,25 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
+@login_required
 def posts_detail(request, post_id):
   post = Post.objects.get(id=post_id)
   return render(request, 'main_app/post_details.html', { 
     'post': post
   })
 
-class PostCreate(CreateView):
+class PostCreate(LoginRequiredMixin, CreateView):
   model = Post
   fields = '__all__'
+  success_url = '/feed'
   
-class PostDelete(DeleteView):
+class PostDelete(LoginRequiredMixin, DeleteView):
   model = Post
   success_url = '/feed'
   
-class PostUpdate(UpdateView):
+class PostUpdate(LoginRequiredMixin, UpdateView):
   model = Post
   fields = ['comment', 'brand', 'price', 'url', 'image']
-  
   
   def get_queryset(self):
     sort = self.request.GET.get('sort', '')
@@ -62,8 +65,8 @@ class PostUpdate(UpdateView):
       return Post.objects.order_by(sort)
     else:
       return Post.objects.all()
-    
-class CommentCreate(CreateView):
+   
+class CommentCreate(LoginRequiredMixin, CreateView):
   model = Comment
   fields = '__all__'
 
