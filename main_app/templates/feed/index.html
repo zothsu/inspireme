@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Feed</h1>
-
 <div class="feed-container">
   <div class="card-container">
     {% for post in posts %}
@@ -16,14 +14,12 @@
           <p> <span class="bold"> Image URL:</span> {{ post.image }}</p>
         </span>
       </div>
-      <div>
-        <a href="{% url 'post_detail' post.id %}">View All Dupes!</a>
-        <a href="{% url 'comment' post.id %}">Add a Dupe!</a>
-      </div>
-      <div>
-        {% if user == post.user %}
-        <a href="{% url 'post_update' post.id %}">Update</a>
-        <a href="{% url 'post_delete' post.id %}">Delete</a>
+      <div class="links">
+        <a href="{% url 'post_detail' post.id %}">ALL DUPES</a> &nbsp;|&nbsp;
+        <a href="{% url 'comment' post.id %}">ADD A DUPE</a>
+        {% if user == post.user %}&nbsp;|&nbsp;
+        <a href="{% url 'post_update' post.id %}">UPDATE</a>&nbsp;|&nbsp;
+        <a href="{% url 'post_delete' post.id %}">DELETE</a>
         {% endif %}
       </div>
     </div>
