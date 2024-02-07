@@ -1,34 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Feed</h1>
-
 <div class="feed-container">
-  
   <div class="card-container">
     {% for post in posts %}
     <div class="card">
       <div class="card-content">
-        <span class="card-title">
-          <p> Name: {{ post.name }}</p>
-          <p> Details: {{ post.comment }}</p>
-          <p> Brand: {{ post.brand }}</p>
-          <p> URL: {{ post.url }}</p>
-          <p> Image URL: {{ post.image }}</p>
+        <span>
+          <p> <span class="bold">Name: </span> {{ post.name }}</p>
+          <p> <span class="bold"> Details:</span> {{ post.comment }}</p>
+          <p> <span class="bold"> Brand:</span> {{ post.brand }}</p>
+          <p> <span class="bold"> URL: </span>{{ post.url }}</p>
+          <p> <span class="bold"> Image URL:</span> {{ post.image }}</p>
         </span>
       </div>
-      <a href="{% url 'post_detail' post.id %}">View All Dupes!</a>
-      <a href="{% url 'comment' post.id %}">Add a Dupe!</a>
-      <div>
-        {% if user == post.user %}
-        <a href="{% url 'post_update' post.id %}">Update</a>
-        <a href="{% url 'post_delete' post.id %}">Delete</a>
+      <div class="links">
+        <a href="{% url 'post_detail' post.id %}">ALL DUPES</a> &nbsp;|&nbsp;
+        <a href="{% url 'comment' post.id %}">ADD A DUPE</a>
+        {% if user == post.user %}&nbsp;|&nbsp;
+        <a href="{% url 'post_update' post.id %}">UPDATE</a>&nbsp;|&nbsp;
+        <a href="{% url 'post_delete' post.id %}">DELETE</a>
         {% endif %}
       </div>
     </div>
+    {% endfor %}
   </div>
 
-{% endfor %}
-<div class="vl"></div>
-</div>
 {% endblock %}

@@ -94,24 +94,54 @@ nav ul {
   background-color: #C8BFB8;
 }
 
-.card {
-  background-color: #ffffff;
-  max-width: 40vw;
-  display: flex;
-  flex-direction: column;
-}
-
 .feed-container {
 background-color: #f4f0EB;
-height: 100vh;
 width: 80vw;
 margin: 0 auto;
 border-radius: 30px;
 display: flex;
+flex-direction: row;
 justify-content: center;
 align-items: center;
+padding: 2em;
+margin-top: 1em;
 }
 
+.card-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.card {
+  background-color: #ffffff;
+  max-width: 40vw;
+  padding: 1em;
+  border-radius: 1em;
+  margin: .5em;
+}
+
+
+.card-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+span > p {
+  font-family: 'Playfair Display', serif;
+}
+.links {
+  font-family: 'Playfair Display', serif;
+  font-size: .7rem;
+  font-weight: 400;
+}
+.bold {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
 .vl {
   border-left: 3px solid #545454;
   height: 500px;
