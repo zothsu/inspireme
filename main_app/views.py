@@ -48,7 +48,7 @@ def posts_detail(request, post_id):
 
 class PostCreate(LoginRequiredMixin, CreateView):
   model = Post
-  fields = '__all__'
+  fields = ['product_name', 'comment', 'brand', 'price', 'url', 'image']
   success_url = '/feed'
   
 class PostDelete(LoginRequiredMixin, DeleteView):
@@ -68,7 +68,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
    
 class CommentCreate(LoginRequiredMixin, CreateView):
   model = Comment
-  fields = '__all__'
+  fields = ['product_name', 'body', 'brand', 'price', 'url', 'image']
 
   def form_valid(self, form):
     post_id = self.kwargs['post_id']
