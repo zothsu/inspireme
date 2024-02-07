@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% block body_class %}feed{% endblock %}
 {% block content %}
 
 <h1>All Dupes!</h1>
@@ -19,7 +18,11 @@
       <p> Image URL: {{ comment.image }}</p>
     </span>
   </div>
+  {% if user == post.user %}
+  <a href="{% url 'comment_delete' post.id %}">Delete</a>
+  {% endif %}
 </div>
+
 {% endfor %}
 
 
