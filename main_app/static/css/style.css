@@ -100,17 +100,25 @@ width: 80vw;
 margin: 0 auto;
 border-radius: 30px;
 display: flex;
-flex-direction: row;
+flex-direction: row-reverse;
 justify-content: center;
 align-items: center;
 padding: 2em;
 margin-top: 1em;
 }
 
+.feed-img {
+  max-height: 60vh;
+  margin-left: 2.5em;
+  >img {
+    height: 27.5em;
+  }
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
-  max-width: 40vw;
+  max-width: 48vw;
   max-height: 65vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -124,14 +132,18 @@ margin-top: 1em;
   margin: .5em;
 }
 
-
 .card-content {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  width: fit-content;
 }
-span > p {
+
+div > p {
   font-family: 'Playfair Display', serif;
 }
+
+
 .links {
   font-family: 'Playfair Display', serif;
   font-size: .7rem;
@@ -150,6 +162,7 @@ span > p {
 .card-container {
   display: flex;
 }
+
 
 /* FOOTER */
 
