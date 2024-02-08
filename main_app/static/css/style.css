@@ -143,7 +143,6 @@ div > p {
   font-family: 'Playfair Display', serif;
 }
 
-
 .links {
   font-family: 'Playfair Display', serif;
   font-size: .7rem;
@@ -184,4 +183,27 @@ text-align: center;
 button.submit-link:focus {
   background-color: transparent;
   outline: none;
+}
+
+/* ADD POST FORM */
+
+.form-card {
+  background-color: #ffffff;
+  width: 700px;
+  margin: 0;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.btn {
+  margin: 2em 0 0 2em;
+  color: #f4f0EB;
+  background-color: #545454;
+  border: none;
+  border-radius: 2px;
+  padding: .5em .5em;
+}
+
+.urls {
+  text-overflow: hidden;
 }

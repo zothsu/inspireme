@@ -9,11 +9,12 @@
     {% for post in posts %}
     <div class="card">
       <div class="card-content">
-          <p> <span class="bold">Name: </span> {{ post.name }}</p>
-          <p> <span class="bold"> Details:</span> {{ post.comment }}</p>
-          <p> <span class="bold"> Brand:</span> {{ post.brand }}</p>
+          <p> <span class="bold"> Name: </span> {{ post.name }}</p>
+          <p> <span class="bold"> Details: </span> {{ post.comment }}</p>
+          <p> <span class="bold"> Brand: </span> {{ post.brand }}</p>
+          <p> <span class="bold"> Price: </span> {{ post.price }}</p>
           <p> <span class="bold"> URL: </span>{{ post.url }}</p>
-          <p> <span class="bold"> Image URL:</span> {{ post.image }}</p>
+          <p> <span class="bold"> Image URL: </span> {{ post.image }}</p>
       </div>
       <div class="links">
         <a href="{% url 'post_detail' post.id %}">ALL DUPES</a> &nbsp;|&nbsp;
