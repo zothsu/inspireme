@@ -25,7 +25,10 @@
     </div>
     <div class="links">
     {% if user == comment.user %}
-    <a href="{% url 'comment_delete' post.id comment.id %}">Delete</a>
+    <form action="{% url 'comment_delete' comment.id %}" method="POST">
+      {% csrf_token %}
+      <button type="submit">Delete</button>
+    </form>
     {% endif %}
     </div>
   </div>
