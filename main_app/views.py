@@ -56,7 +56,7 @@ def posts_detail(request, post_id):
 
 class PostCreate(LoginRequiredMixin, CreateView):
   model = Post
-  fields = ['product_name', 'comment', 'brand', 'price', 'url', 'image']
+  fields = ['product_name', 'comment', 'brand', 'price', 'product_url', 'image_url']
   success_url = '/feed'
 
   def form_valid(self, form):
@@ -74,7 +74,7 @@ class PostDelete(LoginRequiredMixin, DeleteView):
   
 class PostUpdate(LoginRequiredMixin, UpdateView):
   model = Post
-  fields = ['comment', 'brand', 'price', 'url', 'image']
+  fields = ['comment', 'brand', 'price', 'product_url', 'image_url']
   
   def get_queryset(self):
     sort = self.request.GET.get('sort', '')
@@ -85,7 +85,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
    
 class CommentCreate(LoginRequiredMixin, CreateView):
   model = Comment
-  fields = ['product_name', 'body', 'brand', 'price', 'url', 'image']
+  fields = ['product_name', 'body', 'brand', 'price', 'product_url', 'image_url']
   success_url = '/feed'
 
   def form_valid(self, form):
