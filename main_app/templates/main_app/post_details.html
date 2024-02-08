@@ -11,12 +11,14 @@
     {% for comment in post.entry.all %}
     <div class="card">
       <div class="card-content">
+      <p> <span class="bold"> User Name: </span> {{ post.user }}</p>
       <p> <span class="bold">Product Name:</span> {{ comment.product_name }}</p>
       <p> <span class="bold">Details:</span> {{ comment.comment }}</p>
       <p> <span class="bold">Brand:</span> {{ comment.brand }}</p>
+      <p> <span class="bold"> Price: USD </span> {{ post.price }}</p>
       <div class="urls">
-      <p> <span class="bold">URL:</span> <a href="{{ comment.url }}"> {{ comment.url }} </a></p>
-      <p> <span class="bold">Image URL:</span> <a href="{{ comment.image }}"> {{ comment.image }} </a></p>
+      <p> <span class="bold">URL:</span> <a href="{{ comment.product_url }}"> {{ comment.product_url }} </a></p>
+      <p> <span class="bold">Image URL: <br/> </span> <img src="{{ post.image_url }}" width="220px" height="220px" ></p>
       </div>
     </div>
     <div class="links">
