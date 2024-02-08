@@ -115,6 +115,10 @@ margin-top: 1em;
   }
 }
 
+.feed-img > a{
+ margin-right: 5em;
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
