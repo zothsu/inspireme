@@ -3,11 +3,13 @@
 
 
   <div class="feed-container">
+    
     <div class="feed-img">
-    <img src="https://i.imgur.com/C76fnDu.png">
-    <a href="{% url 'comment' post.id %}">Add a Dupe</a>
+    <img src="{{ post.image_url }}"><br/>
+      <a href="{% url 'comment' post.id %}" class="dupebutton">Add a Dupe</a>
   </div>
   <div class="card-container">
+    {% if post.entry.all %}
     {% for comment in post.entry.all %}
     <div class="card">
       <div class="card-content">
@@ -15,10 +17,10 @@
       <p> <span class="bold">Product Name:</span> {{ comment.product_name }}</p>
       <p> <span class="bold">Details:</span> {{ comment.comment }}</p>
       <p> <span class="bold">Brand:</span> {{ comment.brand }}</p>
-      <p> <span class="bold"> Price: USD </span> {{ post.price }}</p>
+      <p> <span class="bold"> Price: $</span> {{ comment.price }}USD</p>
       <div class="urls">
       <p> <span class="bold">URL:</span> <a href="{{ comment.product_url }}"> {{ comment.product_url }} </a></p>
-      <p> <span class="bold">Image URL: <br/> </span> <img src="{{ post.image_url }}" width="220px" height="220px" ></p>
+      <p> <span class="bold">Image URL: <br/> </span> <img src="{{ comment.image_url }}" width="220px" height="220px" ></p>
       </div>
     </div>
     <div class="links">
@@ -28,6 +30,9 @@
     </div>
   </div>
   {% endfor %}
+  {% else %}
+      <p class="nodupe">No dupes yet..</p>
+    {% endif %}
 </div>
 
 {% endblock %}
