@@ -1,12 +1,12 @@
 # Inspire Me Home Decore
 
-**Created by [Destinee Adomako] [Lara Lee Viquiera] [Zoe T Sullivan](https://www.linkedin.com/in/destineeadomako/) (https://www.linkedin.com/in/laraviquiera/) (https://www.linkedin.com/in/zoetsullivan/)**
+**Created by [Destinee Adomako](https://www.linkedin.com/in/destineeadomako/) [Lara Lee Viquiera](https://www.linkedin.com/in/laraviquiera/) [Zoe T Sullivan](https://www.linkedin.com/in/zoetsullivan/)**
 
 ## 📝 Description
 At Inspire Me Home Decor, we believe in the power of community-driven inspiration for creating stunning home interiors without breaking the bank. Our platform serves as a collaborative space where users passionate about home decor come together to share and discover budget-friendly alternatives.
 ## :camera_flash: Screenshots
 
-<img src="">
+<img src="https://i.imgur.com/dkiLbXP.png">
 <img src="">
 
 ## 🤔 Planning

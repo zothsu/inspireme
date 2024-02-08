@@ -121,10 +121,6 @@ margin-top: 1em;
   }
 }
 
-.feed-img > a{
- margin-right: 5em;
-}
-
 .card-container {
   display: flex;
   flex-direction: column;
@@ -217,4 +213,22 @@ button.submit-link:focus {
 
 .urls {
   text-overflow: hidden;
+}
+
+.dupebutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: fit-content;
+  margin-top: .5em;
+  color: #f4f0EB;
+  background-color: #545454;
+  border: none;
+  border-radius: 2px;
+  padding: .5em .5em;
+}
+
+.nodupe {
+  text-align: center;
+  
 }
