@@ -30,7 +30,6 @@
         {% if user.is_authenticated %}
         <li><a href="{% url 'index' %}" class="{% active_link 'index' %}">FEED</a></li>
         <li><a href="{% url 'post_create' %}" class="{% active_link 'post_create' %}">NEW POST</a></li>
-        <li><a href="">MY PROFILE</a></li>
       </ul>
       <div class="register">
         <a href="{% url 'logout' %}">

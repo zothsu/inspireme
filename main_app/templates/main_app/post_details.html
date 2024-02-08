@@ -27,7 +27,7 @@
     {% if user == comment.user %}
     <form action="{% url 'comment_delete' comment.id %}" method="POST">
       {% csrf_token %}
-      <button type="submit">Delete</button>
+      <button type="submit" class="btn">Delete</button>
     </form>
     {% endif %}
     </div>

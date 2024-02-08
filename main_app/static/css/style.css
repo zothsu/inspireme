@@ -124,7 +124,6 @@ margin-top: 1em;
 .card-container {
   display: flex;
   flex-direction: column;
-  max-width: 48vw;
   max-height: 65vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -132,7 +131,7 @@ margin-top: 1em;
 
 .card {
   background-color: #ffffff;
-  max-width: 40vw;
+  min-width: 50vw;
   padding: 1em;
   border-radius: 1em;
   margin: .5em;
@@ -230,5 +229,16 @@ button.submit-link:focus {
 
 .nodupe {
   text-align: center;
-  
 }
+
+/* DELETE POST */
+.delete_post {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
