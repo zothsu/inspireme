@@ -9,6 +9,7 @@ from .models import Post, Comment
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic import ListView
 from django.urls import reverse
+from django import forms
 # import requests
 
 # Create your views here.
@@ -57,6 +58,15 @@ class PostCreate(LoginRequiredMixin, CreateView):
   model = Post
   fields = ['product_name', 'comment', 'brand', 'price', 'url', 'image']
   success_url = '/feed'
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
+  
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['bg'] = 'feed'
+    return context
   
 class PostDelete(LoginRequiredMixin, DeleteView):
   model = Post
