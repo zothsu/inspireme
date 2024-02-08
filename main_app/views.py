@@ -104,4 +104,5 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
   model = Comment
 
   def get_success_url(self):
-    return reverse('post_detail', kwargs={'post_id': self.object.post_id})
+    post_id = self.object.post_id
+    return reverse('post_detail', kwargs={'post_id': post_id})
