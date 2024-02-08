@@ -8,6 +8,7 @@ colorama==0.4.6
 dict-toolbox==5.0.0
 dj-database-url==2.1.0
 Django==5.0.1
+django-active-link==0.1.8
 django-environ==0.11.2
 django-on-heroku==1.1.2
 gunicorn==21.2.0
