@@ -1,27 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>All Dupes!</h1>
 
-<a href="{% url 'comment' post.id %}">Add a Dupe!</a>
-
-{% for comment in post.entry.all %}
-<div class="card">
-  <div class="card-content">
-    <span class="card-title">
-      <p> Product Name: {{ comment.product_name }}</p>
-      <p> Details: {{ comment.comment }}</p>
-      <p> Brand: {{ comment.brand }}</p>
-      <p> URL: {{ comment.url }}</p>
-      <p> Image URL: {{ comment.image }}</p>
-    </span>
-  </div>
-  <div>
+  <div class="feed-container">
+    <div class="feed-img">
+    <img src="https://i.imgur.com/C76fnDu.png">
+    <a href="{% url 'comment' post.id %}">Add a Dupe</a>
+    </div>
+  <div class="card-container">
+    {% for comment in post.entry.all %}
+    <div class="card">
+      <div class="card-content">
+      <p> <span class="bold">Product Name:</span> {{ comment.product_name }}</p>
+      <p> <span class="bold">Details:</span> {{ comment.comment }}</p>
+      <p> <span class="bold">Brand:</span> {{ comment.brand }}</p>
+      <div class="urls">
+      <p> <span class="bold">URL:</span> <a href="{{ comment.url }}"> {{ comment.url }} </a></p>
+      <p> <span class="bold">Image URL:</span> <a href="{{ comment.image }}"> {{ comment.image }} </a></p>
+      </div>
+    </div>
+    <div class="links">
     {% if user == comment.user %}
     <a href="{% url 'comment_delete' comment.id %}">Delete</a>
     {% endif %}
+    </div>
   </div>
+  {% endfor %}
 </div>
 
-{% endfor %}
 {% endblock %}
