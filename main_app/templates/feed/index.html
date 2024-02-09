@@ -14,8 +14,8 @@
           <p> <span class="bold"> Details: </span> {{ post.comment }}</p>
           <p> <span class="bold"> Brand: </span> {{ post.brand }}</p>
           <p> <span class="bold"> Price: USD </span> {{ post.price }}</p>
-          <p> <span class="bold"> Product URL: </span><a href="{{ post.product_url }}">{{ post.product_url }}</a></p>
-          <p> <span class="bold"> Image URL: <br/> </span> <img src="{{ post.image_url }}" width="220px" height="220px" ></p>
+          <p> <span class="bold"> </span> <img src="{{ post.image_url }}" width="220px" height="220px" ></p>
+          <p> <span class="bold"> </span><a href="{{ post.product_url }}" target="_blank">Click here to view the product</a></p>
       </div>
       <div class="links">
         <a href="{% url 'post_detail' post.id %}">ALL DUPES</a> &nbsp;|&nbsp;

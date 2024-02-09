@@ -7,6 +7,7 @@
 body {
   min-height: 100vh;
   background-color: #C8BFB8;
+  text-transform: initial;
 }
 
 /* NAVBAR */
@@ -32,6 +33,11 @@ nav ul {
   list-style-type: none;
   display: flex;
   align-items: center;
+}
+
+.active {
+  background-color: #C8BFB8;
+  border-radius: 10%;
 }
 
 /* HOME PAGE */
@@ -115,22 +121,17 @@ margin-top: 1em;
   }
 }
 
-.feed-img > a{
- margin-right: 5em;
-}
-
 .card-container {
   display: flex;
   flex-direction: column;
-  max-width: 48vw;
-  max-height: 65vh;
+  max-height: 70vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .card {
   background-color: #ffffff;
-  max-width: 40vw;
+  min-width: 50vw;
   padding: 1em;
   border-radius: 1em;
   margin: .5em;
@@ -152,11 +153,13 @@ div > p {
   font-size: .7rem;
   font-weight: 400;
 }
+
 .bold {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: 1rem;
 }
+
 .vl {
   border-left: 3px solid #545454;
   height: 500px;
@@ -165,7 +168,6 @@ div > p {
 .card-container {
   display: flex;
 }
-
 
 /* FOOTER */
 
@@ -211,3 +213,32 @@ button.submit-link:focus {
 .urls {
   text-overflow: hidden;
 }
+
+.dupebutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: fit-content;
+  margin-top: .5em;
+  color: #f4f0EB;
+  background-color: #545454;
+  border: none;
+  border-radius: 2px;
+  padding: .5em .5em;
+}
+
+.nodupe {
+  text-align: center;
+}
+
+/* DELETE POST */
+.delete_post {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
