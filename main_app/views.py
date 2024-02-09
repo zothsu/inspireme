@@ -74,11 +74,8 @@ class PostDelete(LoginRequiredMixin, DeleteView):
   
 class PostUpdate(LoginRequiredMixin, UpdateView):
   model = Post
-  fields = ['comment', 'brand', 'price', 'product_url', 'image_url']
+  fields = ['product_name', 'comment', 'brand', 'price', 'product_url', 'image_url']
   success_url = '/feed'
-  
-  def get_queryset(self):
-    return super().get_queryset().order_by('-created_at')
 
    
 class CommentCreate(LoginRequiredMixin, CreateView):
