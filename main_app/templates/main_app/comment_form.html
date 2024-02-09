@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
   
-<h1>Add your dupe below...</h1>
 
-  <form action="" method="post">
-    {% csrf_token %}
-    <input type="hidden" name="post_id" value="{{ post.id}}">
-    <table>
-      {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit!" class="btn">
-  </form>
 
+  <div class="feed-container">
+    <div class="feed-img">
+    <img src="https://i.imgur.com/C76fnDu.png">
+    </div>
+    <div class="form-container">
+    <div class="form-card">
+      <h2>Add your dupe below...</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="post_id" value="{{ post.id}}">
+      <table>
+        {{ form.as_table }}
+      </table>
+      <input type="submit" value="Submit!" class="btn">
+    </form>
+    </div>
+  </div>
+  </div>
 {% endblock %}

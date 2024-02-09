@@ -4,9 +4,8 @@
 
   <div class="feed-container">
     
-    <div class="feed-img">
+  <div class="feed-img">
     <img src="{{ post.image_url }}"><br/>
-      <a href="{% url 'comment' post.id %}" class="dupebutton">Add a Dupe</a>
   </div>
   <div class="card-container">
     {% if post.entry.all %}
@@ -19,8 +18,8 @@
       <p> <span class="bold">Brand:</span> {{ comment.brand }}</p>
       <p> <span class="bold"> Price: $</span> {{ comment.price }}USD</p>
       <div class="urls">
-      <p> <span class="bold"></span> <a href="{{ comment.product_url }}" target="_blank">Click here to view the dupe</a></p>
       <p> <span class="bold"></span> <img src="{{ comment.image_url }}" width="220px" height="220px" ></p>
+      <p> <span class="bold"></span> <a href="{{ comment.product_url }}" target="_blank">Click here to view the dupe</a></p>
       </div>
     </div>
     <div class="links">
@@ -35,6 +34,7 @@
   {% endfor %}
   {% else %}
       <p class="nodupe">No dupes yet..</p>
+      <a href="{% url 'comment' post.id %}" class="dupebutton">Add a Dupe</a>
     {% endif %}
 </div>
 

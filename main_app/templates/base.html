@@ -25,7 +25,7 @@
     <h1>&nbsp; &nbsp;INSPIRE ME HOME DECOR</h1>
     <nav class="navbar">
       <ul>
-        <li><a href="{% url 'home' %}" class="{% active_link 'home' %}">HOME</a></li>
+        <li><a href="{% url 'home' %}" class="{% active_link 'home' active %}">HOME</a></li>
         <li><a href="{% url 'about' %}" class="{% active_link 'about' %}">ABOUT</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'index' %}" class="{% active_link 'index' %}">FEED</a></li>
