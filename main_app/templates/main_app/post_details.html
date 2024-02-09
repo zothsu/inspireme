@@ -4,13 +4,14 @@
 
   <div class="feed-container">
     
-  <div class="feed-img">
+  <div class="dupe-img">
     <img src="{{ post.image_url }}"><br/>
   </div>
   <div class="card-container">
     {% if post.entry.all %}
     {% for comment in post.entry.all %}
     <div class="card">
+      <h2>All Dupes</h2>
       <div class="card-content">
       <p> <span class="bold"> Username: </span> {{ comment.user }}</p>
       <p> <span class="bold">Product Name:</span> {{ comment.product_name }}</p>

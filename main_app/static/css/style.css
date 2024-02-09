@@ -231,6 +231,14 @@ button.submit-link:focus {
   text-align: center;
 }
 
+.dupe-img {
+  max-height: 60vh;
+  margin-left: 2.5em;
+  >img {
+    height: 10em;
+  }
+}
+
 /* DELETE POST */
 .delete_post {
   text-align: center;
