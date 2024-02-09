@@ -7,6 +7,7 @@
 body {
   min-height: 100vh;
   background-color: #C8BFB8;
+  text-transform: initial;
 }
 
 /* NAVBAR */
@@ -32,6 +33,11 @@ nav ul {
   list-style-type: none;
   display: flex;
   align-items: center;
+}
+
+.active {
+  background-color: #C8BFB8;
+  border-radius: 10%;
 }
 
 /* HOME PAGE */
@@ -90,13 +96,78 @@ nav ul {
 
 /* FEED */
 .feed {
-  background: url('https://i.imgur.com/5i7ccWs.png');
   background-size: cover;
   background-color: #C8BFB8;
 }
 
+.feed-container {
+background-color: #f4f0EB;
+width: 80vw;
+margin: 0 auto;
+border-radius: 30px;
+display: flex;
+flex-direction: row-reverse;
+justify-content: center;
+align-items: center;
+padding: 2em;
+margin-top: 1em;
+}
+
+.feed-img {
+  max-height: 60vh;
+  margin-left: 2.5em;
+  >img {
+    height: 27.5em;
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 48vw;
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .card {
   background-color: #ffffff;
+  max-width: 40vw;
+  padding: 1em;
+  border-radius: 1em;
+  margin: .5em;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+div > p {
+  font-family: 'Playfair Display', serif;
+}
+
+.links {
+  font-family: 'Playfair Display', serif;
+  font-size: .7rem;
+  font-weight: 400;
+}
+
+.bold {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.vl {
+  border-left: 3px solid #545454;
+  height: 500px;
+}
+
+.card-container {
+  display: flex;
 }
 
 /* FOOTER */
@@ -105,4 +176,59 @@ footer {
 position: fixed;
 bottom: 0; left: 0; right: 0;
 text-align: center;
+}
+
+/* SUBMIT BUTTON */
+.submit-link {
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button.submit-link:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+/* ADD POST FORM */
+
+.form-card {
+  background-color: #ffffff;
+  width: 700px;
+  margin: 0;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.btn {
+  margin: 2em 0 0 2em;
+  color: #f4f0EB;
+  background-color: #545454;
+  border: none;
+  border-radius: 2px;
+  padding: .5em .5em;
+}
+
+.urls {
+  text-overflow: hidden;
+}
+
+.dupebutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: fit-content;
+  margin-top: .5em;
+  color: #f4f0EB;
+  background-color: #545454;
+  border: none;
+  border-radius: 2px;
+  padding: .5em .5em;
+}
+
+.nodupe {
+  text-align: center;
+  
 }

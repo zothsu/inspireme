@@ -1,24 +1,41 @@
 {% extends 'base.html' %}
-{% block body_class %}feed{% endblock %}
 {% block content %}
 
-<h1>See All Dupes</h1>
 
-<div class="card">
-  <div class="card-content">
-    <span class="card-title">
-      <p> Name: {{ comment.name }}</p>
-      <p> Details: {{ comment.comment }}</p>
-      <p> Brand: {{ comment.brand }}</p>
-      <p> URL: {{ comment.url }}</p>
-      <p> Image URL: {{ comment.image }}</p>
-    </span>
+  <div class="feed-container">
+    
+    <div class="feed-img">
+    <img src="{{ post.image_url }}"><br/>
+      <a href="{% url 'comment' post.id %}" class="dupebutton">Add a Dupe</a>
   </div>
-  <a href="{% url 'comment' post.id %}">Add Comment</a>
+  <div class="card-container">
+    {% if post.entry.all %}
+    {% for comment in post.entry.all %}
+    <div class="card">
+      <div class="card-content">
+      <p> <span class="bold"> User Name: </span> {{ post.user }}</p>
+      <p> <span class="bold">Product Name:</span> {{ comment.product_name }}</p>
+      <p> <span class="bold">Details:</span> {{ comment.comment }}</p>
+      <p> <span class="bold">Brand:</span> {{ comment.brand }}</p>
+      <p> <span class="bold"> Price: $</span> {{ comment.price }}USD</p>
+      <div class="urls">
+      <p> <span class="bold"></span> <a href="{{ comment.product_url }}" target="_blank">Click here to view the dupe</a></p>
+      <p> <span class="bold"></span> <img src="{{ comment.image_url }}" width="220px" height="220px" ></p>
+      </div>
+    </div>
+    <div class="links">
+    {% if user == comment.user %}
+    <form action="{% url 'comment_delete' comment.id %}" method="POST">
+      {% csrf_token %}
+      <button type="submit">Delete</button>
+    </form>
+    {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+      <p class="nodupe">No dupes yet..</p>
+    {% endif %}
 </div>
 
-{% for comment in comments %}
-
-
-{% endfor %}
 {% endblock %}
