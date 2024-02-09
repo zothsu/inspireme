@@ -202,12 +202,24 @@ button.submit-link:focus {
 }
 
 .btn {
-  margin: 2em 0 0 2em;
+  margin: 1.5em 0 0 0;
   color: #f4f0EB;
   background-color: #545454;
   border: none;
   border-radius: 2px;
   padding: .5em .5em;
+  text-align: center;
+}
+
+.btn:hover {
+  margin: 1.5em 0 0 0;
+  color: #2c2825;
+  background-color: #C8BFB8;
+  border: none;
+  border-radius: 2px;
+  padding: .5em .5em;
+  cursor: pointer;
+  text-align: center;
 }
 
 .urls {
@@ -238,6 +250,7 @@ button.submit-link:focus {
     height: 10em;
   }
 }
+
 
 /* DELETE POST */
 .delete_post {

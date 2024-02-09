@@ -10,10 +10,10 @@
     <div class="card">
       <div class="card-content">
           <p> <span class="bold"> Username: </span> {{ post.user }}</p>
+          <p> <span class="bold"> Notes: </span> {{ post.comment }}</p>
           <p> <span class="bold"> Product Name: </span> {{ post.product_name }}</p>
-          <p> <span class="bold"> Comment: </span> {{ post.comment }}</p>
           <p> <span class="bold"> Brand: </span> {{ post.brand }}</p>
-          <p> <span class="bold"> Price: USD </span> {{ post.price }}</p>
+          <p> <span class="bold"> Price: $</span> {{ post.price }}</p>
           <p> <span class="bold"> </span> <img src="{{ post.image_url }}" width="220px" height="220px" ></p>
           <p> <span class="bold"> </span><a href="{{ post.product_url }}" target="_blank">Click here to view the product</a></p>
       </div>
