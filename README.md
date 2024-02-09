@@ -4,7 +4,7 @@
 
 <div id="description" align="center">
 
-# Inspire Me Home Decore
+# Inspire Me Home Decor
 
  ### [CLICK TO DEMO](https://inspiremehomedecor-4f31de9a6a6e.herokuapp.com/)
 
