@@ -1,12 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
   
-<div class="feed-container">
-  <div class="feed-img">
-  <img src="https://i.imgur.com/C76fnDu.png">
-  </div>
-  <div class="form-container">
-  <div class="form-card">
+<h1>Add Post</h1>
+
   <form action="" method="post">
     {% csrf_token %}
     <table>
@@ -14,7 +10,5 @@
     </table>
     <input type="submit" value="Submit!" class="btn">
   </form>
-  </div>
-</div>
-</div>
+
 {% endblock %}

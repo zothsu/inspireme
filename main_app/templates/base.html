@@ -1,35 +1,28 @@
 {% load static %}
-{% load active_link_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- FAVICON -->
-  <link href="{% static 'imgs/favicon.ico' %}" rel="icon" type="image/x-icon">
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&display=swap" rel="stylesheet">
-  <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <title>Inspire Me</title>
 </head>
-<body class="{{ bg }}"> 
+<body class="{% block body_class %}{% endblock %}"> 
 
   <header>
     <h1>&nbsp; &nbsp;INSPIRE ME HOME DECOR</h1>
     <nav class="navbar">
       <ul>
-        <li><a href="{% url 'home' %}" class="{% active_link 'home' %}">HOME</a></li>
-        <li><a href="{% url 'about' %}" class="{% active_link 'about' %}">ABOUT</a></li>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'about' %}">ABOUT</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{% url 'index' %}" class="{% active_link 'index' %}">FEED</a></li>
-        <li><a href="{% url 'post_create' %}" class="{% active_link 'post_create' %}">NEW POST</a></li>
+        <li><a href="{% url 'index' %}">FEED</a></li>
+        <li><a href="{% url 'post_create' %}">NEW POST</a></li>
         <li><a href="">MY PROFILE</a></li>
       </ul>
       <div class="register">
