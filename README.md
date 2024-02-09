@@ -1,6 +1,6 @@
 <div id="header" align="center">
 
-  <img src="https://i.imgur.com/87lfv78.png" width="800" height="400">
+  <img src="" width="600" height="400">
 
 <div id="description" align="center">
 
@@ -14,21 +14,23 @@
 At Inspire Me Home Decor, we believe in the power of community-driven inspiration for creating stunning home interiors without breaking the bank. Our platform serves as a collaborative space where users passionate about home decor come together to share and discover budget-friendly alternatives.
 </div>
 
-## :camera_flash: Screenshots 
+  ## :camera_flash: Screenshots 
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
   | <h3>Home Page</h3> | <img
-    src="https://i.imgur.com/dkiLbXP.png"
-    width="700">
+    src="https://i.imgur.com/pOOFSbd.png"
+    width="700"
   /> |
   | <h3 align="center">Feed Page</h3> | <img
-    src="">
+    src="https://i.imgur.com/WOjYyPf.png"
+    width="700"
+  /> |
+  | <h3 align="center">New Post</h3> | <img
+    src="https://i.imgur.com/nL8wx0K.png"
+    width="700"
   /> |
 
-## 🤔 Planning
-
-[https://trello.com/](https://trello.com/b/eEAWfGaj/project-3)
 
 ## 💻 Technologies Used
 ![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
@@ -73,9 +75,10 @@ At Inspire Me Home Decor, we believe in the power of community-driven inspiratio
 </details>
 
 ## :satellite: Upcoming Features
- - [:x:] Mobile compatible design
- - [:x:] Update user comment functionality
- - [:x:] Like/Dislike users posts
+- [:x:] Mobile compatible design
+- [:x:] Like/Dislike users posts
+- [:x:] Update comment
+- [:star:] Delete comment
 
 
 
